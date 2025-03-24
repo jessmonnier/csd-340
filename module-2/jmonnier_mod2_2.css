@@ -1,0 +1,65 @@
+body {
+    font-size: 16px;
+}
+/*
+I don't like when the text spans the entire browser, so I limited it to 80%
+*/
+div#container {
+    width: 80%;
+    margin: auto;
+}
+p {
+    font-weight: 400;
+    line-height: 1.4em;
+}
+h1 {
+    font-weight: 700;
+    text-align: center;
+    font-variant: small-caps; 
+    /* 
+    I prefer small caps, but this would do uppercase:
+    text-transform: uppercase; 
+    */
+}
+h2 {
+    font-weight: 500;
+    text-align: left;
+    padding-top: 15px;
+}
+address {
+    text-align: center;
+    font-style: normal;
+}
+address a {
+    font-size: 1.25em;
+    color: #4F3674;
+    text-decoration: none;
+    font-style: normal;
+}
+address a:visited {
+    font-style: italic;
+    color: #8f3674;
+}
+address a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: #D6A800;
+}
+address p {
+    margin: 0;
+}
+.sentence {
+    font-style: italic;
+}
+.intro {
+    text-indent: 2em;
+}
+/*
+hr style source:
+https://css-tricks.com/examples/hrs/
+*/
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
