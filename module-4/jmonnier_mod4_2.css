@@ -1,0 +1,73 @@
+/*
+Jess Monnier
+CSD-340 Assignment 4.2
+3 April 2025
+*/
+body {
+    font-size: 16px;
+    font-family: cambria;
+}
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+#image-gallery {
+    margin-top: 10%;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#image-gallery div {
+    background-color: rgba(153, 219, 149, 0.3);
+    border-radius: 25px;
+}
+#image-gallery div:hover {
+    background-color: rgba(153, 219, 149, 0.6);
+}
+#image-gallery div img {
+    width: 400px;
+    height: auto;
+}
+div.last {
+    margin-top: 15%;
+    float: right;
+    margin-bottom: 20px;
+}
+h1 {
+    text-align: center;
+    background-color: #72bf6d;
+    border: 1px solid #D6A800;
+    color: #2b4229;
+    padding: 10px;
+    font-weight: 700;
+    font-variant: small-caps; 
+    border-radius: 15px;
+}
+h3 {
+    font-weight: 600 bold;
+    text-align: center;
+    color: rgba(20, 131, 31, 1);
+}
+figure {
+    text-align: center;
+}
+figcaption {
+    font-style: italic;
+    font-size: 0.75em;
+    color: rgba(20, 131, 31, 1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+a {
+    color: #568f53;
+    text-decoration: none;
+}
+a:visited {
+    color: #72bf6d;
+}
+a:hover {
+    cursor: pointer;
+    color: #99db95;
+    text-decoration: underline;
+}
