@@ -1,0 +1,120 @@
+<!--
+Jess Monnier
+CSD-340 Assignment 9.3
+21 April 2025
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Playing with JavaScript for a college course">
+    <meta name="keywords" content="College course, HTML, CSS, JavaScript">
+    <meta name="author" content="Jess Monnier">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <link rel="stylesheet" href="jmonnier_mod9_3.css">
+    <script>
+        var firstVar = "granite";
+        var secondVar = "indifferent";
+        var thirdVar = "stronger";
+        var fourthVar = "pang";
+        function playMadlibs() {
+            const inputElement = document.getElementById('madlibs-input');
+            const spanElement = document.getElementById('madlibs');
+            spanElement.textContent = inputElement.value;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>
+            Assignment 9.3 – JavaScript - Part 1
+        </h1>
+        <p>
+            The following flash fiction story is something I wrote in 2016 for a challenge on a writing 
+            website. I repurposed it for this assignment because it's pretty short so I figured it would work.
+        </p>
+        <div id="story">
+        <h2>
+            Seafaring
+        </h2>
+            <p>
+                "She's seafaring," the captain promised before he brought the siblings on board. This in 
+                response to the skeptical expression Samael wore as his stare swept the ship from bow to stern.
+            </p>
+            <p>
+                But beggars can't be choosers, and they could afford none of the other ships at anchor. Samael's 
+                uncertainty was soft and tremulous, but his fear for Tabitha was bright and sharp and his 
+                determination was as unyielding as <span class="blank" id="granite">&nbsp; &nbsp; &nbsp; &nbsp; </span>. 
+            </p>
+            <p>
+                Now she feels his frustration and terror, amplified through the squeeze of his hand around hers, 
+                and nausea as the ship swells and rolls beneath them. But Samael's presence is swallowed by the feel 
+                of the ship buckling in the grip of the storm that rages. She is the ship, every straining board, 
+                the rigging whipping against the deck and the mast, even the crew — most of them hunkered down against 
+                the wind, but a few still fighting for control against the 
+                <span class="blank" id="indifferent">&nbsp; &nbsp; &nbsp; &nbsp; </span> destructive force of the storm. 
+            </p>
+            <p>
+                Trying to hold it all together is a hundred times harder than trying to remain curled tightly around 
+                herself against the prying, pulling hands of the wardens who strapped her down for her <i>treatments</i> before 
+                Samael freed her. She could never do it. They were too strong. And the storm is beyond the strength of mere 
+                men.
+            </p>
+            <p>
+                But she must, she must — alone, the ship would have been torn apart already, all thirty-three souls on 
+                board lost to the sea. Together they are <span class="blank" id="stronger">&nbsp; &nbsp; &nbsp; &nbsp; </span>. 
+                Maybe they can accomplish together what Tabitha was too weak to do alone. She holds on. The wind howls and the 
+                water chops and crashes, stealing away the voices of the crew — drowning out Samael's broken murmuring 
+                of "Bitty, Bitty… Tabitha… It's okay" as his fingers tense in her hair — but Tabitha hears it all as if it 
+                is spoken in her own voice.
+            </p>
+            <p>
+                Eventually the storm eases, and Tabitha leaks back into her body to find herself diminished. She fights for 
+                breath against a chest that is suddenly heavy. Her muscles are liquid, her skin at once cold and hot, and 
+                chills set her to shaking that aches in her bones. She slits her eyes toward Samael and tries his name, but 
+                her throat squeezes it into a moan.
+            </p>
+            <p>
+                "Bitty," Samael murmurs, his dark eyes flicking over her face. "Where did you go?"
+            </p>
+            <p>
+                She doesn't need to answer. She senses his understanding — a soft feeling under the 
+                <span class="blank" id="pang">&nbsp; &nbsp; &nbsp; &nbsp; </span> of despair. <i>I was the ship,</i> she wants to say. 
+                <i>We were strong.</i> But that strength has gone.
+            </p>
+            <p>
+                His fingers thread through her hair. "I wanted to keep you safe. I thought I could — I thought this was the way."
+            </p>
+            <p>
+                Her eyes slip closed, but she fights for a smile. She manages a bare whisper. "S'okay." She may yet survive this; 
+                she's not sure. But if not, better to die <span class="blank" id="madlibs">&nbsp; &nbsp; &nbsp; &nbsp; </span>, having 
+                felt the strength to withstand a storm, than in captivity.
+            </p>
+        </div>
+        <p>
+            <button type="button" onclick="document.getElementById('granite').innerHTML = firstVar">granite</button>
+            &nbsp; 
+            <button type="button" onclick="document.getElementById('indifferent').innerHTML = secondVar">indifferent</button>
+            &nbsp; 
+            <button type="button" onclick="document.getElementById('stronger').innerHTML = thirdVar">stronger</button>
+            &nbsp; 
+            <button type="button" onclick="document.getElementById('pang').innerHTML = fourthVar">pang</button>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            <input type="text" id="madlibs-input" placeholder="enter a word">
+            &nbsp; 
+            <button type="button" onclick="playMadlibs()">use my text</button>
+            &nbsp; &nbsp;
+            <button type="button" onclick="document.getElementById('madlibs').innerHTML = 'free'">see original text</button>
+        </p>
+        <hr>
+        <address>
+            <p><a href="https://www.bellevue.edu/">Bellevue University</a></p>
+            <p>1000 Galvin Road South</p>
+            <p>Bellevue, Nebraska 68005</p>
+        </address>
+    </div>
+</body>
+
+</html>

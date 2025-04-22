@@ -1,0 +1,97 @@
+/*
+Jess Monnier
+CSD-340 Assignment 9.3
+21 April 2025
+*/
+
+body {
+    font-size: 17px;
+}
+/*
+I don't like when the text spans the entire browser, so I limited it to 80%
+*/
+#container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+p {
+    font-weight: 400;
+    line-height: 1.4em;
+}
+h1 {
+    font-weight: 700;
+    text-align: center;
+    font-variant: small-caps; 
+    /* 
+    I prefer small caps, but this would do uppercase:
+    text-transform: uppercase; 
+    */
+}
+h2 {
+    font-weight: 500;
+    text-align: left;
+    padding-top: 15px;
+    color: rgb(9, 40, 143);
+}
+address {
+    text-align: center;
+    font-style: normal;
+}
+address a {
+    font-size: 1.25em;
+    color: rgb(104, 133, 230);
+    text-decoration: none;
+    font-style: normal;
+}
+address a:visited {
+    font-style: italic;
+    color: rgb(9, 40, 143);
+}
+address a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: rgb(168, 186, 247);
+}
+address p {
+    margin: 0;
+}
+#story {
+    width: 80%;
+    text-align: left;
+    margin: auto;
+}
+#story p {
+    text-indent: 2em;
+    line-height: 1.4;
+    margin: 0;
+}
+/*
+hr style source:
+https://css-tricks.com/examples/hrs/
+*/
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+button, input {
+    background-color: rgb(168, 186, 247);
+    border-color: rgb(9, 40, 143);
+    color: rgb(9, 40, 143);
+    border-radius: 15px;
+    padding: 5px 10px 5px 10px;
+    font-size: 17px;
+}
+input {
+    width: 120px;
+}
+input::placeholder {
+    font-style: italic;
+    color:rgb(90, 115, 197);
+}
+.blank {
+    color: rgb(9, 40, 143);
+    text-decoration-line: underline;
+    text-decoration-style: double;
+}
