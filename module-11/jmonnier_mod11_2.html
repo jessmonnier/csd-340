@@ -84,6 +84,14 @@ CSD-340 Assignment 11.2
             cursor: pointer;
             vertical-align: top;
         }
+        .not-done {
+            color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        .done {
+            color:rgb(66, 163, 66);
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -95,10 +103,21 @@ CSD-340 Assignment 11.2
             <h2>
                 To-Do List
             </h2>
+            <p>
+                To add items to this To-Do List, enter a task into the text input and then either click Enter or
+                press the "add" button.
+            </p>
+            <p>
+                Tasks will have a grayed-out checkmark to click to toggle completion and a red "x" to click to
+                delete the item.
+            </p>
+            <p>
+                &nbsp;
+            </p>
             <ol id="todo-list">
                 <li>
                     <input type="text" id="todo-input" placeholder="Enter a task"> 
-                    <button type="button" id ="add-button" onclick="addTask()">add</button>
+                    <button type="button" id ="add-button" onclick="addTask();">add</button>
                 </li>
             </ol>
         </div>
@@ -145,15 +164,18 @@ CSD-340 Assignment 11.2
             */
             let newIndex = taskList.children[tasks.length];
             
-            // Add the new task to the global array
-            tasks.push(newTask);
-            
             // Create the new line item; it will be the text plus a delete "button"
             const li = document.createElement("li");
-            li.innerHTML = newTask + ' &nbsp; <span class="delete" onclick="deleteTask(this);">x</span>';
+            li.setAttribute("data-index", tasks.length);
+            li.innerHTML = newTask + 
+                            ' &nbsp; <span class="not-done" onclick="toggleComplete(this);">☑</span>' + 
+                            ' &nbsp; <span class="delete" onclick="deleteTask(this);">x</span>';
             
             // Insert the new line item above the text input
             taskList.insertBefore(li, newIndex);
+            
+            // Add the new task to the global array
+            tasks.push(newTask);
 
             // Clear the text from the input
             taskInput.value = "";
@@ -165,14 +187,32 @@ CSD-340 Assignment 11.2
         */
         function deleteTask (element) {
             const li = element.parentElement;
-            const text = li.firstChild.textContent.trim();
+            const index = parseInt(li.getAttribute("data-index"));
 
-            const index = tasks.indexOf(text);
-            if (index !== -1) {
-                tasks.splice(index, 1);
-            }
+            tasks.splice(index, 1);
 
             li.remove();
+        }
+
+        /* 
+        This function adds strikethrough to items that are marked complete & toggles
+        the checkmark icon's class to change its color
+        */
+        function toggleComplete (element) {
+            const li = element.parentElement;
+            const index = parseInt(li.getAttribute("data-index"));
+            
+            const text = tasks[index];
+
+            if (element.classList.contains("not-done")) {
+                li.innerHTML = '<s>' + text + 
+                    '</s> &nbsp; <span class="done" onclick="toggleComplete(this);">☑</span>' + 
+                    ' &nbsp; <span class="delete" onclick="deleteTask(this);">x</span>';
+            } else {
+                li.innerHTML = text + 
+                    ' &nbsp; <span class="not-done" onclick="toggleComplete(this);">☑</span>' + 
+                    ' &nbsp; <span class="delete" onclick="deleteTask(this);">x</span>';
+            }
         }
     </script>
 </body>
