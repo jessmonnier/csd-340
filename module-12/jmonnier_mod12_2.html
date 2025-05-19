@@ -1,0 +1,190 @@
+<!--
+Jess Monnier
+CSD-340 Assignment 3.3
+18 May 2025
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="More JavaScript practice">
+    <meta name="keywords" content="College course, HTML, CSS">
+    <meta name="author" content="Jess Monnier">
+    <title>Jess Monnier CSD 340 Landing Page</title>
+    <style>
+        body {
+            font-family: "Mulish", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 18px;
+        }
+        #container {
+            margin-top: 50px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        div.left {
+            width: 45%;
+            border: 1px solid red;
+            border-radius: 15px;
+            display: inline-grid;
+            float: left;
+            padding-left: 10px;
+        }
+        div.right {
+            width: 45%;
+            border: 1px dashed red;
+            border-radius: 15px;
+            display: inline-grid;
+            float: right;
+            padding-left: 20px;
+        }
+        div.last {
+            width: 100%;
+            margin-top: 20%;
+            float: right;
+            margin-bottom: 20px;
+        }
+        ul, ol {
+            font-weight: 300;
+            padding: 10px;
+            list-style-position: inside;
+        }
+        ul {
+            list-style: upper-roman;
+        }
+        h1 {
+            text-align: center;
+            background-color: rgb(245, 202, 202);
+            border: 1px solid rgb(231, 22, 22);
+            color: rgb(199, 20, 20);
+            padding: 10px;
+            font-weight: 700;
+            border-radius: 15px;
+            /* font-variant: small-caps; */
+        }
+        h3 {
+            font-weight: 500;
+        }
+        button {
+            background-color: rgb(245, 202, 202);
+            border-color: rgb(231, 22, 22);
+            color: rgb(199, 20, 20);
+            border-radius: 10px;
+            padding: 5px 10px 5px 10px;
+            font-size: 17px;
+            width: 200px;
+        }
+        a {
+            color: rgb(199, 20, 20);
+            text-decoration: none;
+        }
+        a:visited {
+            color: rgb(134, 14, 14);
+        }
+        a:hover {
+            cursor: pointer;
+            color: rgb(228, 27, 27);
+            text-decoration: overline underline;
+            text-decoration-color: rgb(231, 156, 156);
+        }
+    </style>
+    <script>
+        // some global variables for easy reference w/i functions
+        var buttonText = ["Save the Best for Last", "Show the Best First"];
+        var bookTitles = ["The Forest of Hands and Teeth (series) by Carrie Ryan",
+            "Ella Enchanted by Gail Carson Levine",
+            "An Ember in the Ashes series by Sabaa Tahir",
+            "Graceling by Kristin Cashore",
+            "The Hunger Games series by Suzanne Collins",
+            "The Locked Tomb series by Tamsyn Muir",
+            "Skyward series by Brandon Sanderson",
+            "His Dark Materials series by Philip Pullman",
+            "The Stormlight Archive by Brandon Sanderson",
+            "The Broken Earth Trilogy by N.K. Jemisin"
+        ];
+
+        // Function to populate the initial list when the page first loads
+        function initList() {
+            const olBooks = document.getElementById("book-list");
+            for (var i=0; i<bookTitles.length; ++i) {
+                const li = document.createElement("li");
+                li.textContent = bookTitles[i];
+                olBooks.append(li);
+            }
+        }
+
+        // Call the initList function when the page loads
+        document.addEventListener("DOMContentLoaded", initList);
+
+        // Function to reverse the list order
+        function reverseList() {
+            
+            // Set up our document nodes for reference in function
+            const olBooks = document.getElementById("book-list");
+            const bookList = olBooks.children;
+            const bookButton = document.getElementById("reverse-list");
+            
+            // Go ahead and reverse the order of the bookList array
+            bookTitles.reverse();
+
+            // Check if the ol numbering is currently set to reversed
+            if (olBooks.hasAttribute("reversed")) {
+                // Set the reverse-list button's text to first string in buttonText array
+                bookButton.textContent = buttonText[0];
+                // Remove reversed attribute from the ordered list
+                olBooks.reversed = false;
+            } else {
+                // Set the reverse-list button's text to second string in buttonText array
+                bookButton.textContent = buttonText[1];
+                // Add reversed attribute to the ordered list
+                olBooks.reversed = true;
+            }
+
+            // Update the text value of each list item to the correct element from bookTitles array
+            for (var i=0; i<bookTitles.length; ++i) {
+                bookList[i].textContent = bookTitles[i];
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>
+            Assignment 12.2: JavaScript - Part 4
+        </h1>
+        <div class="left">
+            <h3>
+                Top 10 Favorite Books
+            </h3>
+            <ol id="book-list" reversed>
+            </ol>
+            <div style="display: flex; justify-content: flex-start; align-items: center; margin: 10px;">
+                <b>Click to Switch Order:</b> &nbsp; &nbsp;
+                <button id="reverse-list" onclick="reverseList();">Show the Best First</button>
+            </div>
+        </div>
+        <div class="right">
+            <h3>
+                5 Things I’ve Learned Since the Course Started
+            </h3>
+            <ul>
+                <li>How to add shadows to elements & make them look "pressed-in" when hovered over</li>
+                <li>How to use custom "bullets" for ordered and unordered lists</li>
+                <li>How to style an (un)ordered list's "bullets" separately from its text</li>
+                <li>How to use JavaScript to make a page more dynamic</li>
+                <li>Some different ways to trigger JavaScript functions, including on page load</li>
+            </ul>
+        </div>
+        <div class="last">
+            <span style="float: right;">
+                <a href="../index.html">Landing Page</a>
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>
